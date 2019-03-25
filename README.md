@@ -346,7 +346,7 @@ si tienes dudas existenciales con respecto a estas decisiones. No existe una
 
 ### `README.md`
 
-- [ ] Colocar el pseudo codigo o diagrama de flujo con el algoritmo que soluciona el problema.
+- [ ] Colocar el pseudo código o diagrama de flujo con el algoritmo que soluciona el problema.
 - [ ] Un board con el backlog para la implementación de la librería.
 - [ ] Documentación técnica de la librería.
 - [ ] Guía de uso e instalación de la librería
@@ -358,18 +358,18 @@ si tienes dudas existenciales con respecto a estas decisiones. No existe una
 - [ ] Implementa soporte para directorios
 - [ ] Implementa `options.validate`
 
+### Pruebas / tests
+
+- [ ] Pruebas unitarias cubren un mínimo del 70% de statements, functions,
+      lines, y branches.
+- [ ] Pasa tests (y linters) (`npm test`).
+
 ### CLI
 
 - [ ] Expone ejecutable `md-links` en el path (configurado en `package.json`)
 - [ ] Se ejecuta sin errores / output esperado
 - [ ] Implementa `--validate`
 - [ ] Implementa `--stats`
-
-### Pruebas / tests
-
-- [ ] Pruebas unitarias cubren un mínimo del 70% de statements, functions,
-      lines, y branches.
-- [ ] Pasa tests (y linters) (`npm test`).
 
 ## Hacker Edition
 
