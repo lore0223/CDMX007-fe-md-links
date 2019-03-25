@@ -29,7 +29,7 @@ interactuar con el sistema en sí, archivos, redes, ...
 
 En este proyecto nos alejamos un poco del navegador para construir un programa
 que se ejecute usando Node.js, donde aprenderemos sobre cómo interactuar con el
-sistema archivos, con el entorno (_proceso_, _env_, _stdin/stdout/stderr_), ...
+sistema archivos, con el entorno (_process_, _env_, _stdin/stdout/stderr_), ...
 
 ## Objetivos
 
@@ -48,7 +48,7 @@ Tópicos:
 - [file system](https://nodejs.org/api/fs.html).
 - [path](https://nodejs.org/api/path.html).
 - [http.get](https://nodejs.org/api/http.html#http_http_get_options_callback).
-- Parsing.
+- [Parsing](https://en.wikipedia.org/wiki/Parsing).
 - [markdown](https://daringfireball.net/projects/markdown/syntax).
 - [CLI](https://www.proyectobyte.com/windows/simbolo-del-sistema/uso-la-interfaz-linea-comandos).
 - [npm-scripts](https://docs.npmjs.com/misc/scripts).
@@ -83,6 +83,9 @@ seguimiento de tu progreso.
 Dentro de cada _milestone_ se crearán y asignarán los _issues_ que cada quien
 considere necesarios.
 
+También te sugerimos que empieces a utilizar los [project boards](https://help.github.com/en/articles/about-project-boards) de github que te
+ayudaran a organizar y priorizar su trabajo.
+
 ### Archivos del proyecto
 
 - `README.md` con descripción del módulo, instrucciones de instalación/uso,
@@ -92,12 +95,11 @@ considere necesarios.
 - `package.json` con nombre, versión, descripción, autores, licencia,
   dependencias, scripts (pretest, test, ...)
 - `.editorconfig` con configuración para editores de texto.
-- `.eslintrc` con configuración para linter. Este archivo no
-  se debe cambiar.
+- `.eslintrc` con configuración para linter.
 - `.gitignore` para ignorar `node_modules` u otras carpetas que no deban
   incluirse en control de versiones (`git`).
 - `test/md-links.spec.js` debe contener los tests unitarios para la función
-  `mdLinks()`. Tu inplementación debe pasar estos tets.
+  `mdLinks()`. Tu implementación debe pasar estos test.
 
 ### JavaScript API
 
@@ -109,8 +111,8 @@ siguiente interfaz:
 ##### Argumentos
 
 - `path`: Ruta absoluta o relativa al archivo o directorio. Si la ruta pasada es
-  relativa, debe resolverse como relativa al directorio desde donde se invoca
-  node - _current working directory_).
+  relativa, debe resolverse con respecto al directorio desde donde se invoca
+  node (_current working directory_).
 - `options`: Un objeto con las siguientes propiedades:
   - `validate`: Booleano que determina si se desea validar los links
     encontrados.
@@ -130,23 +132,28 @@ las siguientes propiedades:
 ```js
 const mdLinks = require("md-links");
 
+// Caso 1 .- Ruta relativa sin options
 mdLinks("./some/example.md")
   .then(links => {
     // => [{ href, text, file }]
   })
   .catch(console.error);
 
+// Caso  .- Ruta relativa con option (validate)
 mdLinks("./some/example.md", { validate: true })
   .then(links => {
     // => [{ href, text, file, status, ok }]
   })
   .catch(console.error);
 
+// Caso 3 .- Ruta relativa de un directorio sin options
 mdLinks("./some/dir")
   .then(links => {
     // => [{ href, text, file }]
   })
   .catch(console.error);
+
+//PD: Pueden presentarse más casos.
 ```
 
 ### CLI (Command Line Interface - Interfaz de Línea de Comando)
@@ -247,9 +254,6 @@ para usarlo programáticamente.
 
 ### Habilidades Blandas
 
-Para este proyecto esperamos que ya hayas alcanzado el nivel 4 en todas tus
-habilidades blandas. Te aconsejamos revisar la rúbrica:
-
 | Habilidad                                                  |
 | ---------------------------------------------------------- |
 | Planificación y organización                               |
@@ -260,6 +264,8 @@ habilidades blandas. Te aconsejamos revisar la rúbrica:
 | Trabajo en equipo (trabajo colaborativo y responsabilidad) |
 | Comunicación eficaz                                        |
 | Presentaciones                                             |
+
+Recuerda revisar la rúbrica y de acuerdo a tus alcances en proyectos anteriores busca tu crecimiento personal.
 
 ## Pistas / Tips
 
@@ -364,3 +370,10 @@ si tienes dudas existenciales con respecto a estas decisiones. No existe una
 - [ ] Pruebas unitarias cubren un mínimo del 70% de statements, functions,
       lines, y branches.
 - [ ] Pasa tests (y linters) (`npm test`).
+
+## Hacker Edition
+
+- [ ] Crear un script en el package.json que transforme el codigo ES6+ a ES5.
+- [ ] Puedes agregar la propiedad line a cada objeto link indicando en qué línea del archivo se encontró el link.
+- [ ] Puedes agregar más estadísticas.
+- [ ] Integración continua con Travis o Circle CI.
