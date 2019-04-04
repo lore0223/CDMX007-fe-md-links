@@ -1,6 +1,5 @@
-module.exports = () => {
-  
-};
 
-const read = require('./read.js');
-console.log(read.readFile('README.md'));
+const reader = require('./read.js');
+console.log(reader);
+
+
