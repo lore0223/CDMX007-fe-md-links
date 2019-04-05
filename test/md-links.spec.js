@@ -1,33 +1,26 @@
-const mdLinks = require('../');
+const read    = require('../read.js');
+const mdlinks = require('../mdlinks');
 
-
-describe('mdLinks', () => {
-
-  it('should...', () => {
-    console.log('FIX ME!');
+describe('readDir is a function', () =>{
+  it('readDir ', () => {
+    expect(typeof read.readDir).toBe('function');
   });
+});
 
+describe('getLinks is a function', () =>{
+  it('getLinks ', ()=>{
+    expect(typeof mdlinks.getLinks).toBe('function');
+  });
 });
 
 
-const readJs = require ('../read.js');
 
-describe('read', () =>{
+// describe('mdLinks', () => {
 
-  it('should be a function', () =>{
-    expect(typeof window.readFile).toBe('function');
-  })
+//   it('should...', () => {
+//     console.log('FIX ME!');
+//   });
 
-});
+// });
 
-// describe('pokesaurius', () => {
 
-//   it('is an object', () => {
-//       expect(typeof window.pokesaurius).toBe('object');
-//   })
-// },
-
-//   describe('typeFilter', () => {
-//     it('is a function', () => {
-//       expect(typeof window.pokesaurius.typeFilter).toBe('function');
-//     })
