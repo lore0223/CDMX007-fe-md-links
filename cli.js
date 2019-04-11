@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 
-const reader = require('./read.js');
-// reader();
+const reader       = require('./read.js');
 
-const pathFile = process.argv[2];
-const validateTrue = process.argv[3]
+const pathFile     = process.argv[2];
 
-reader.readFile(pathFile, validateTrue);
+const options      = process.argv[3];
+
+reader.readFile(pathFile, options);
+
+
