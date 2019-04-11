@@ -3,13 +3,13 @@ const mdlinks = require('./mdlinks');
 const path    = require('path');
 
 
-const readFile = (filepath, validate)=>{
+const readFile = (filepath, options) => {
 console.log(filepath);
   fs.readFile(filepath, 'utf-8', (err,  data) => {
     
     if (err) return console.log(err);
 
-    mdlinks.getLinks(filepath, data, validate);                                                     
+    mdlinks.getLinks(filepath, data, options);                                                     
   })
 }
 
@@ -24,8 +24,7 @@ const readDir = (dir) => {
                   if (err) {
                     console.log(err);
                   } else {
-                  mdlinks.getLinks(data);                                                     
-                  
+                  mdlinks.getLinks(pathfile,data,validate);                                                     
                 }
               })
             }
