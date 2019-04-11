@@ -1,29 +1,41 @@
 const fetch = require('node-fetch');
 const read = require('./read');
+const path = require('path')
 
-const getLinks = (data) => {
-  const urlMatch = /(https?:\/\/[^\s]+)/g;
-  const result = data.match(urlMatch);
-  console.log(result);
-//   result.forEach(element => {
-//     fetch(element)
-//           .then((res) => {
-//             console.log(res.status, res.statusText);
-//           })
-//           .catch((err) => {
-//             console.log(err);
-//           })
-  };
 
-//   for (let i = 0; i < result.length; i++) {
-//     fetch(result[i])
-//       .then((res) => {
-//         console.log(res.status, res.statusText);
-//       })
-//       .catch((err) => {
-//         console.log(err);
-//       })
-//   }
+const fetchData = async (url, pathFile, text) => {
+  console.log("url:", url)
+  const resultFetch = await fetch(url)
+  .then(data => data)
+  .catch(err => console.log("Esta no es una URL: ", url))
+  
+  if (resultFetch === undefined) return console.log("No obtuvimos respuesta")
+
+  console.log(`${pathFile} - ${resultFetch.url} - ${resultFetch.statusText} - ${resultFetch.status} - ${text}`)
+}
+
+
+const getLinks = (pathFile, data, validate) => {
+  const markdownRegex = /\[([^\[\]]+)\]\(([^)]+)/g;
+  const result = data.match(markdownRegex);
+
+  const linkRegex = /\(([^)]+)/ ;
+  const textRegex = /\[([^\(([^)]+)/;
+
+  result.forEach(element => {
+    const link = element.match(linkRegex)
+    const text = element.match(textRegex)
+
+    if(validate) {
+      fetchData(link[1], pathFile, text[1].slice(0,-1));
+      
+    } else {
+      console.log(`${pathFile} - ${link[1]} - ${text[1].slice(0,-1)}`);
+    }
+
+  })
+}
+
 
 
 module.exports.getLinks = getLinks;

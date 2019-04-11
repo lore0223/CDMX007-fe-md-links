@@ -1,4 +1,9 @@
 #!/usr/bin/env node
 
-  // const [,,...args] = process.argv
-  console.log('hello world');     
+const reader = require('./read.js');
+// reader();
+
+const pathFile = process.argv[2];
+const validateTrue = process.argv[3]
+
+reader.readFile(pathFile, validateTrue);
