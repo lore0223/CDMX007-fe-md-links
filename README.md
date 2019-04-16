@@ -39,7 +39,7 @@ Ejemplo: `mdlinks ./README.md --validate`
 
 ## Diagrama de flujo que se utilizó para crear esta librería
  
-![Diagrama mdlinks-l](./assets/Diagrama.pdf)
+![Diagrama mdlinks-l](/home/laboratoria148-am/Documentos/Laboratoria/markdown/CDMX007-fe-md-links/assets/Diagrama.png)
 
 ## Agradecimientos
 A todas mis compañeras que me ayudaron en este proyecto con sus grandes ideas y sus mentes brillantes.
