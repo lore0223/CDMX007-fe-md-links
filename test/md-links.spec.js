@@ -8,11 +8,6 @@ describe ('readFile is a function',() => {
   });
 });
 
-describe('readDir is a function', () =>{
-  it('readDir ', () => {
-    expect(typeof read.readDir).toBe('function');
-  });
-});
 
 describe('getLinks is a function', () =>{
   it('getLinks ', ()=>{
@@ -21,7 +16,21 @@ describe('getLinks is a function', () =>{
 });
 
 
+describe('getStats is a function', () =>{
+  it('getStats ', ()=>{
+    expect(typeof mdlinks.getStats).toBe('function');
+  });
+});
 
+
+
+
+
+// describe('readDir is a function', () =>{
+//   it('readDir ', () => {
+//     expect(typeof read.readDir).toBe('function');
+//   });
+// });
 
 // describe('mdLinks', () => {
 
