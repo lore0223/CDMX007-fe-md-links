@@ -27,7 +27,7 @@
   },
   "author": "",
   "bin": {
-    "md": "./cli.js"
+    "mdlinks": "./cli.js"
   },
   "bugs": {
     "url": "https://github.com/lore0223/CDMX007-fe-md-links/issues"
