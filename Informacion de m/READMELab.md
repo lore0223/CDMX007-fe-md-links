@@ -346,15 +346,15 @@ si tienes dudas existenciales con respecto a estas decisiones. No existe una
 
 ### `README.md`
 
-- [ ] Colocar el pseudo código o diagrama de flujo con el algoritmo que soluciona el problema.
+- [X] Colocar el pseudo código o diagrama de flujo con el algoritmo que soluciona el problema.
 - [ ] Un board con el backlog para la implementación de la librería.
-- [ ] Documentación técnica de la librería.
-- [ ] Guía de uso e instalación de la librería
+- [x] Documentación técnica de la librería.
+- [x] Guía de uso e instalación de la librería
 
 ### API `mdLinks(path, opts)`
 
-- [ ] El módulo exporta una función con la interfaz (API) esperada.
-- [ ] Implementa soporte para archivo individual
+- [x] El módulo exporta una función con la interfaz (API) esperada.
+- [x] Implementa soporte para archivo individual
 - [ ] Implementa soporte para directorios
 - [ ] Implementa `options.validate`
 
@@ -362,14 +362,14 @@ si tienes dudas existenciales con respecto a estas decisiones. No existe una
 
 - [ ] Pruebas unitarias cubren un mínimo del 70% de statements, functions,
       lines, y branches.
-- [ ] Pasa tests (y linters) (`npm test`).
+- [x] Pasa tests (y linters) (`npm test`).
 
 ### CLI
 
-- [ ] Expone ejecutable `md-links` en el path (configurado en `package.json`)
+- [x] Expone ejecutable `md-links` en el path (configurado en `package.json`)
 - [ ] Se ejecuta sin errores / output esperado
-- [ ] Implementa `--validate`
-- [ ] Implementa `--stats`
+- [x] Implementa `--validate`
+- [x] Implementa `--stats`
 
 ## Hacker Edition
 
